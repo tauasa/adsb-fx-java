@@ -1,0 +1,232 @@
+/*
+ * adsb-fx — instrument panel theme.
+ *
+ * Sodium amber on ink, monospace throughout for the data, because every value
+ * on screen is a fixed-width field in the underlying protocol and the alignment
+ * is part of how it reads.
+ */
+
+.root {
+    -fx-ink: #0C1016;
+    -fx-panel: #141A22;
+    -fx-rule: #232D3A;
+    -fx-text: #DCE3EC;
+    -fx-dim: #8A97A5;
+    -fx-amber: #F0A93B;
+    -fx-alert: #D9553B;
+
+    -fx-background-color: -fx-ink;
+    -fx-font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+    -fx-font-size: 12px;
+}
+
+.root-pane {
+    -fx-background-color: -fx-ink;
+}
+
+/* ------------------------------------------------------------------ header */
+
+.header-bar {
+    -fx-background-color: -fx-panel;
+    -fx-padding: 12 14 12 14;
+    -fx-border-color: transparent transparent -fx-rule transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.app-title {
+    -fx-text-fill: -fx-amber;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.app-subtitle {
+    -fx-text-fill: -fx-dim;
+    -fx-font-size: 11px;
+}
+
+/* ------------------------------------------------------------ control bar */
+
+.control-bar {
+    -fx-background-color: -fx-ink;
+    -fx-border-color: transparent transparent -fx-rule transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.field-label {
+    -fx-text-fill: -fx-dim;
+    -fx-font-size: 9px;
+}
+
+.text-field {
+    -fx-background-color: -fx-panel;
+    -fx-text-fill: -fx-text;
+    -fx-prompt-text-fill: #45505E;
+    -fx-border-color: -fx-rule;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 5 7 5 7;
+}
+
+.text-field:focused {
+    -fx-border-color: -fx-amber;
+}
+
+/* Set when a coordinate field holds text that is not a usable number. */
+.text-field:invalid {
+    -fx-border-color: -fx-alert;
+    -fx-text-fill: -fx-alert;
+}
+
+.choice-box {
+    -fx-background-color: -fx-panel;
+    -fx-border-color: -fx-rule;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-mark-color: -fx-amber;
+}
+
+.choice-box .label {
+    -fx-text-fill: -fx-text;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: -fx-panel;
+    -fx-border-color: -fx-rule;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: -fx-rule;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-amber;
+    -fx-border-color: -fx-amber;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: rgba(240, 169, 59, 0.12);
+}
+
+.button:pressed {
+    -fx-background-color: rgba(240, 169, 59, 0.22);
+}
+
+/* ------------------------------------------------------------------ table */
+
+.aircraft-table {
+    -fx-background-color: -fx-ink;
+    -fx-border-color: -fx-rule transparent transparent transparent;
+    -fx-border-width: 0;
+    -fx-table-cell-border-color: transparent;
+}
+
+.aircraft-table .column-header-background {
+    -fx-background-color: -fx-panel;
+}
+
+.aircraft-table .column-header,
+.aircraft-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -fx-rule transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-size: 28px;
+}
+
+.aircraft-table .column-header .label {
+    -fx-text-fill: -fx-dim;
+    -fx-font-size: 10px;
+    -fx-alignment: center-left;
+}
+
+.aircraft-table .table-row-cell {
+    -fx-background-color: -fx-ink;
+    -fx-border-color: transparent transparent #171E27 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-cell-size: 26px;
+}
+
+.aircraft-table .table-row-cell:odd {
+    -fx-background-color: #0F141B;
+}
+
+.aircraft-table .table-row-cell:selected {
+    -fx-background-color: rgba(240, 169, 59, 0.16);
+}
+
+.aircraft-table .table-cell {
+    -fx-text-fill: -fx-text;
+    -fx-border-color: transparent;
+    -fx-padding: 4 8 4 8;
+}
+
+.aircraft-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: -fx-amber;
+}
+
+.aircraft-table .placeholder .label {
+    -fx-text-fill: -fx-dim;
+}
+
+/* ------------------------------------------------------------- split pane */
+
+.split-pane {
+    -fx-background-color: -fx-ink;
+    -fx-padding: 0;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: -fx-rule;
+    -fx-padding: 0 1 0 1;
+}
+
+.situation-display {
+    -fx-background-color: -fx-ink;
+}
+
+/* -------------------------------------------------------------- status bar */
+
+.status-bar {
+    -fx-background-color: -fx-panel;
+    -fx-border-color: -fx-rule transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-item {
+    -fx-text-fill: -fx-dim;
+    -fx-font-size: 11px;
+}
+
+.status-error {
+    -fx-text-fill: -fx-alert;
+}
+
+/* ---------------------------------------------------------------- scrolling */
+
+.scroll-bar {
+    -fx-background-color: -fx-ink;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -fx-rule;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: null;
+    -fx-padding: 0;
+}
