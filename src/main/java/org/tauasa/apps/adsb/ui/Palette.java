@@ -13,8 +13,8 @@ public final class Palette {
     public static final Color PANEL = Color.web("#141A22");
     public static final Color RULE = Color.web("#232D3A");
     public static final Color GRID = Color.web("#1D2733");
-    public static final Color TEXT = Color.web("#C3CCD8");
-    public static final Color DIM = Color.web("#63717F");
+    public static final Color TEXT = Color.web("#DCE3EC");
+    public static final Color DIM = Color.web("#8A97A5");
     public static final Color AMBER = Color.web("#F0A93B");
     public static final Color TRAIL = Color.web("#4E9DB8");
     public static final Color ALERT = Color.web("#D9553B");
